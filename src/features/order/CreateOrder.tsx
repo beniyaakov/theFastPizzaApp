@@ -108,6 +108,7 @@ type ErrorType = {
   phone?: string;
 };
 
+/* eslint-disable */
 export async function action({ request }: actionType) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData) as {

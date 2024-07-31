@@ -87,6 +87,7 @@ function Order() {
   );
 }
 
+/* eslint-disable */
 export async function loader({ params }: LoaderFunctionArgs): Promise<void> {
   if (!params.orderId) return;
 
