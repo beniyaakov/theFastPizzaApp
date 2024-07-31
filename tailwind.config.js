@@ -9,9 +9,9 @@ export default {
       fontSitz: {
         huge: ["80rem", { lineHeight: "1" }],
       },
-      height:{
-        screen:"100dvh"
-      }
+      height: {
+        screen: "100dvh",
+      },
     },
   },
   plugins: [],

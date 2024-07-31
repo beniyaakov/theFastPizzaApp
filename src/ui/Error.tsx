@@ -1,17 +1,20 @@
-import {useRouteError } from 'react-router-dom';
-import LinkButton from './LinkButton';
+import { useRouteError } from "react-router-dom";
+import LinkButton from "./LinkButton";
 
 function Error() {
+  const error = useRouteError() as Error;
 
-  const error = useRouteError() as Error
-  
   return (
     <div>
       <h1>Something went wrong 😢</h1>
-      <p>{(error as { data?: string })?.data || (error as { statusText?: string })?.statusText  || (error as Error)?.message }</p>
-      <LinkButton to="-1" >&larr; Go back</LinkButton>
+      <p>
+        {(error as { data?: string })?.data ||
+          (error as { statusText?: string })?.statusText ||
+          (error as Error)?.message}
+      </p>
+      <LinkButton to="-1">&larr; Go back</LinkButton>
     </div>
   );
 }
 
-export default Error
+export default Error;

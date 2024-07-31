@@ -8,48 +8,44 @@ import {
   formatDate,
 } from "../../utils/helpers";
 
-
 export type OrderTYPE = {
-  id?:string,
-  status?:string,
-  customer: string,
-  phone: string,
-  address: string,
-  priority: boolean,
-  estimatedDelivery: string,
+  id?: string;
+  status?: string;
+  customer: string;
+  phone: string;
+  address: string;
+  priority: boolean;
+  estimatedDelivery: string;
   cart: [
     {
-      pizzaId: number,
-      name: string,
-      quantity: number,
-      unitPrice: number,
-      totalPrice: number,
+      pizzaId: number;
+      name: string;
+      quantity: number;
+      unitPrice: number;
+      totalPrice: number;
     },
     {
-      pizzaId: number,
-      name: string,
-      quantity: number,
-      unitPrice: number,
-      totalPrice: number,
+      pizzaId: number;
+      name: string;
+      quantity: number;
+      unitPrice: number;
+      totalPrice: number;
     },
     {
-      pizzaId: number,
-      name: string,
-      quantity: number,
-      unitPrice: number,
-      totalPrice: number,
+      pizzaId: number;
+      name: string;
+      quantity: number;
+      unitPrice: number;
+      totalPrice: number;
     },
-  ],
-  position: string,
-  orderPrice: number,
-  priorityPrice: number,
-}
-
-
-
+  ];
+  position: string;
+  orderPrice: number;
+  priorityPrice: number;
+};
 
 function Order() {
-  const order = useLoaderData() as OrderTYPE
+  const order = useLoaderData() as OrderTYPE;
   // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
   const {
     id,
@@ -91,13 +87,11 @@ function Order() {
   );
 }
 
+export async function loader({ params }: LoaderFunctionArgs): Promise<void> {
+  if (!params.orderId) return;
 
-
-export async function loader({params}:LoaderFunctionArgs):Promise<void>{
-  if (!params.orderId) return
-
-  const order = await getOrder(params.orderId)
-  return order
+  const order = await getOrder(params.orderId);
+  return order;
 }
 
 export default Order;

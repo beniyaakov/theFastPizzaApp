@@ -1,10 +1,12 @@
 import { formatCurrency } from "../../utils/helpers";
 
-type OrderItemProps = {
+type OrderItemProps = {};
 
-}
-
-function OrderItem({ item, isLoadingIngredients, ingredients }:OrderItemProps) {
+function OrderItem({
+  item,
+  isLoadingIngredients,
+  ingredients,
+}: OrderItemProps) {
   const { quantity, name, totalPrice } = item;
 
   return (
