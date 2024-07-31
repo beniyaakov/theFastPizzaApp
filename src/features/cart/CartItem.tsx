@@ -11,7 +11,7 @@ type CartItemType = {
 };
 
 function CartItem({ item }:CartItemType) {
-  const { pizzaId, name, quantity, totalPrice } = item;
+  const {  name, quantity, totalPrice } = item;
 
   return (
     <li className="py-3 sm:flex sm:items-center sm:justify-between">
