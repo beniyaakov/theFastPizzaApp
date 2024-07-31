@@ -29,14 +29,6 @@ export default function Button({
     return (
       <Link className={className} to={to}>
         {children}
-
-
-    
-
-
-
-
-    
       </Link>
     );
   return (
